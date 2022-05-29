@@ -1,0 +1,42 @@
+.reviews {
+  &__card {
+    padding: 4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 1rem 3rem 0 rgba(0 0 0/0.2);
+    flex: 0 0 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__user {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--color-dark-grey-light);
+  }
+
+  &__avatar {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+      height: 4.5rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    text-align: left;
+    margin-bottom: 3rem;
+    color: var(--color-dark-grey-light);
+    margin-bottom: auto;
+    font-style: italic;
+    line-height: 1.8;
+  }
+}

@@ -1,0 +1,36 @@
+extends base
+
+mixin cardData(loc,icon)
+  .card__data
+    svg.card__icon
+      use(href=`/img/icons.svg#icon-${icon}`)
+    span #{loc}
+
+block content 
+  main.main 
+    .card-container  
+      for tour in tours
+        .card 
+          .card__header  
+            .card__picture 
+              img(src=`/img/tours/${tour.imageCover}`)
+            .heading-tertirary
+              span= tour.name
+          .card__details 
+            .card__sub-heading #{tour.difficulty} #{tour.duration}-day tour
+            .card__text= tour.summary
+
+            -const date=tour.startDates[0].toLocaleDateString('en-us', { month: 'long', day: 'numeric' })
+
+            +cardData(tour.startLocation.description,'map-pin')
+            +cardData(date,'calendar')
+            +cardData(`${tour.locations.length} stops`,'flag')
+            +cardData(`${tour.maxGroupSize} people`,'user')
+          .card__footer
+            p
+              span.card__footer-value $#{tour.price} 
+              span per person
+            p 
+              span.card__footer-value= tour.ratingsAverage 
+              span  rating (#{tour.ratingsQuantity})
+            a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) details

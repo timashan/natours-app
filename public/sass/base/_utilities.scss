@@ -1,0 +1,36 @@
+.icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  &--white {
+    fill: white;
+  }
+  &--green {
+    fill: var(--color-primary);
+  }
+  &--grey {
+    fill: var(--color-light-grey-mid);
+  }
+
+  &--sm {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.marker {
+  background-image: url(/img/pin.png);
+  background-size: cover;
+  height: 4rem;
+  width: 3.2rem;
+}
+
+.mb-md {
+  margin-bottom: 3rem;
+}
+
+.line {
+  height: 0.1rem;
+  background-color: var(--color-light-grey-mid);
+  width: 100%;
+  margin: 8rem 0;
+}

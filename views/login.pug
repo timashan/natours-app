@@ -1,0 +1,15 @@
+extends base
+
+block content
+    main.main
+      .login-form
+        h2.heading-secondary.mb-md log into your account
+        form.form.form--login
+          .form__group
+            label.form__label Email address
+            input#email.form__input(type="email" required)
+          .form__group
+            label.form__label Password
+            input#password.form__input(type="password" minlength='8' required)
+          .form__group 
+            button.btn.btn-green login

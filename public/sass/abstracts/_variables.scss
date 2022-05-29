@@ -1,0 +1,17 @@
+:root {
+  --color-primary: #28b487;
+  --color-secondary: #7dd56f;
+  --color-tertiary: #55c57a;
+  --color-dark-grey-mid: #444;
+  --color-dark-grey-light: #777;
+  --color-light-grey-light: #efefef;
+  --color-light-grey-mid: #aaa;
+  --color-orange: #ff7730;
+  --color-red: #eb4d4b;
+  --gradient-orange: linear-gradient(to right, #ff7730, #eb4d4b);
+  --gradient-primary: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}

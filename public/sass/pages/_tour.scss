@@ -1,0 +1,145 @@
+.section-header {
+  height: 38vw;
+}
+
+.header__hero {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  height: 100%;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 25%;
+  }
+
+  &::before {
+    content: '';
+    background-image: var(--gradient-primary);
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+  }
+}
+
+.heading {
+  &-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__group {
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    &__detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      font-weight: 900;
+    }
+  }
+
+  &-primary {
+    span {
+      text-transform: uppercase;
+      background-image: var(--gradient-primary);
+      padding: 1rem 2rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  }
+}
+
+.section-description {
+  margin-top: -9vw;
+  width: 100%;
+  display: flex;
+
+  & > * {
+    flex: 0 0 50%;
+    padding: 15vw 8vw;
+  }
+}
+
+.overview-box {
+  background-color: var(--color-light-grey-light);
+
+  &__group {
+    margin-bottom: 5rem;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  &__label {
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  &__img {
+    width: 5rem;
+    border-radius: 50%;
+  }
+}
+
+.description__text:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.section-pictures {
+  display: flex;
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  margin-top: -9vw;
+  z-index: 5;
+}
+
+.picture-box {
+  padding-bottom: 15rem;
+  img {
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+  }
+}
+
+.section-map {
+  height: 65rem;
+  margin-top: -9vw;
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.section-reviews {
+  background-image: var(--gradient-primary);
+  padding: 20rem 0;
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  margin-top: -9vw;
+}
+
+.reviews {
+  overflow-x: scroll;
+  padding: 4rem 8rem;
+  display: flex;
+  gap: 3vw;
+}
+
+.section-cta {
+  background-color: var(--color-light-grey-light);
+  padding: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

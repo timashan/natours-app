@@ -1,0 +1,91 @@
+extends base
+
+mixin overviewBox(icon,label,date)
+  .overview-box__detail
+    svg.icon.icon--green
+      use(href=`/img/icons.svg#icon-${icon}`)
+    .overview-box__label= label
+    .overview-box__text= date
+
+append head 
+  link(href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet')
+  script(src="https://js.stripe.com/v3/")
+
+block content
+  section.section-header
+    .header__hero 
+      img(src=`/img/tours/${tour.imageCover}`)
+    .heading-box 
+      h1.heading-primary 
+        span= tour.name
+      .heading-box__group
+        .heading-box__detail
+          svg.icon.icon--white
+            use(href=`/img/icons.svg#icon-clock`)
+          span #{tour.duration} DAYS
+        .heading-box__detail
+          svg.icon.icon--white
+            use(href=`/img/icons.svg#icon-map-pin`)
+          span= tour.startLocation.description
+  section.section-description
+    .overview-box 
+      .overview-box__group
+        h2.heading-secondary.mb-md Quick facts
+
+        -const date=tour.startDates[0].toLocaleDateString('en-us', { month: 'long', day: 'numeric' })
+        +overviewBox('calendar','next date',date)
+        +overviewBox('trending-up','difficulty',tour.difficulty)
+        +overviewBox('user','participants',`${tour.maxGroupSize} people`)
+        +overviewBox('star','rating',`${tour.ratingsAverage}/5`)
+
+        - const roles={'lead-guide':'Lead guide', 'guide':'Tour guide'}
+      .overview-box__group
+         h2.heading-secondary.mb-md Your Tour Guides
+         for guide in tour.guides
+          .overview-box__detail
+            img.overview-box__img(src=`/img/users/${guide.photo}`)
+            .overview-box__label= roles[guide.role]
+            .overview-box__text= guide.name
+         
+    .description-box
+      h2.heading-secondary.mb-md ABOUT #{tour.name} TOUR
+      p.description__text= tour.description.split('\n')[0]
+      p.description__text= tour.description.split('\n')[1]
+  section.section-pictures
+    for img in tour.images
+      .picture-box
+        img(src=`/img/tours/${img}`)
+
+  section.section-map 
+    #map(data-locations=JSON.stringify(tour.locations))
+  section.section-reviews
+    .reviews
+      for review in tour.reviews
+        .reviews__card
+          .reviews__avatar
+            img.reviews__avatar-img(src=`/img/users/${review.user.photo}`)
+            h6.reviews__user= review.user.name
+          p.reviews__text= review.review
+          .reviews__rating
+            for star,i in [1,2,3,4,5]
+              svg.icon.icon--sm(class=`${i<review.rating?'icon--green':'icon--grey'}`)
+                use(href=`/img/icons.svg#icon-star`)
+
+  section.section-cta
+    .cta
+      .cta__img.cta__img--logo
+        img(src='/img/logo-white.png')
+      img.cta__img.cta__img--1(src='/img/tours/tour-2-2.jpg')
+      img.cta__img.cta__img--2(src='/img/tours/tour-2-3.jpg')
+      .cta__content
+        .cta__content.heading-secondary What are you waiting for?
+        p.cta__text #{tour.duration} days. #{tour.locations.length} adventure. Infinite memories. Make it yours today!
+        button.btn.btn--green.cta__btn(data-tour-id=tour._id)  book tour now
+
+    
+
+
+
+
+
+

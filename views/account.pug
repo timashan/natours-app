@@ -1,0 +1,55 @@
+extends base
+
+block content
+  main.main 
+    .user-view
+      .user-view__menu
+        ul.side-nav
+          li: a(href='#')
+            svg.icon.icon--white.icon--sm 
+              use(href='/img/icons.svg#icon-settings')
+            span Settings
+          li: a(href='#')
+            svg.icon.icon--white.icon--sm 
+              use(href='/img/icons.svg#icon-briefcase')
+            span My bookings
+          li: a(href='#')
+            svg.icon.icon--white.icon--sm 
+              use(href='/img/icons.svg#icon-star')
+            span My reviews
+          li: a(href='#')
+            svg.icon.icon--white.icon--sm 
+              use(href='/img/icons.svg#icon-credit-card')
+            span Billing
+      .user-view__content
+        .user-view__form-container
+          h2.heading-secondary.mb-md Your account settings
+          form.form.form-user-data
+            .form__group
+              label.form__label Name
+              input#name.form__input(type="text" minlength='10' value=`${user.name}` required)
+            .form__group
+              label.form__label Email address
+              input#email.form__input(type="email" value=`${user.email}` required)
+            .form__group.form__photo-upload 
+              img(src=`/img/users/${user.photo}`) 
+              input#photo(type="file" name="photo" accept='image/*')   
+              label(for="photo") Choose new photo
+            .form__group.right 
+              button.btn save settings
+        .line
+        .user-view__form-container
+          h2.heading-secondary.mb-md password change
+          form.form.form-user-password
+            .form__group
+              label.form__label Current password
+              input#passwordCurrent.form__input(type="password" minlength='8' placeholder='••••••••' required)
+            .form__group
+              label.form__label New password
+              input#password.form__input(type="password" minlength='8' placeholder='••••••••' required)
+            .form__group
+              label.form__label Confirm password
+              input#passwordConfirm.form__input(type="password" minlength='8' placeholder='••••••••' required)
+            .form__group.right 
+                button.btn save settings
+

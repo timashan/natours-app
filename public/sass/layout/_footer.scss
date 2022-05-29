@@ -1,0 +1,43 @@
+.footer {
+  padding: 3rem 5rem;
+  background-color: var(--color-light-grey-light);
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1.6rem;
+  justify-content: space-between;
+  width: 100%;
+
+  &__logo {
+    grid-row: 1 / span 2;
+
+    & img {
+      height: 3.5rem;
+    }
+  }
+
+  &__nav {
+    font-size: 1.4rem;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+
+    a {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: var(--color-dark-grey-light);
+      }
+      &:hover {
+        color: var(--color-primary);
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 1.5rem;
+    color: var(--color-dark-grey-light);
+    grid-column: 2;
+    text-align: right;
+  }
+}

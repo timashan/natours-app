@@ -1,0 +1,41 @@
+.user-view {
+  display: flex;
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+
+  &__menu {
+    background-image: var(--gradient-primary);
+    flex: 32rem 0 0;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  &__content {
+    background-color: #fff;
+    flex: 1;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 7rem 0;
+  }
+
+  &__form-container {
+    padding: 0 8rem;
+    width: 68rem;
+    margin: 0 auto;
+  }
+}
+
+.side-nav {
+  list-style: none;
+  padding: 7rem 2rem;
+  li {
+    a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 0 3rem 4rem;
+      text-transform: uppercase;
+    }
+  }
+}

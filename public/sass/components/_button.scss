@@ -1,0 +1,28 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: var(--color-tertiary);
+    border-radius: 50rem;
+    padding: 1.5rem 3rem;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  &:hover,
+  &:active {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem 0 rgba(0 0 0/0.2);
+  }
+
+  &:focus {
+    background-color: #2e864b;
+  }
+}

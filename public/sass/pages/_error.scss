@@ -1,0 +1,26 @@
+.error {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  &__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 2rem;
+
+    &--text {
+      background-image: var(--gradient-orange);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  &__msg {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-dark-grey-light);
+  }
+}

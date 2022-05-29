@@ -1,0 +1,8 @@
+extends base
+
+block content 
+  p Hi #{firstName},
+  p Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: #{url}.
+  p (Website for this action not yet implemented.)
+  a(href=`${url}`) Reset Password
+  p If you didn't forget your password, please ignore this email!
